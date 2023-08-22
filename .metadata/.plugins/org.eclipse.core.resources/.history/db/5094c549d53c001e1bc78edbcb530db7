@@ -1,0 +1,20 @@
+package aop_p.webToon;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Restaurant {
+	
+	
+
+	public String soup(int aa) {
+		System.out.println();
+		return "";
+	}
+	
+	public String rice() {
+		System.out.println();
+		return "";
+	}
+	
+}

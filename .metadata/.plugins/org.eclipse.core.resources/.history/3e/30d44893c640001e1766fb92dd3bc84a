@@ -1,0 +1,47 @@
+package aaa.controll;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Controller
+@RequestMapping("login")
+public class LoginController {
+
+	
+	@RequestMapping("login")
+    ModelAndView login(
+            @CookieValue(value = "lid") String lid,
+            @CookieValue(value = "lpw") int lpw) {
+		
+        ModelAndView mav = new ModelAndView("cookie/login");
+        mav.addObject("lid", lid);
+        mav.addObject("lpw", lpw);
+        return mav;
+        Cookie [] coos = request.getCookies();
+    	String lid = null, lname = null;
+    	for(Cookie co: coos){
+    		if(co.getName().equals("pid")){
+    			lid = co.getValue(); 
+    		}
+    	}
+    }
+	
+	@RequestMapping("loginReg")
+	ModelAndView loginReg(
+			@CookieValue(value="ppid", defaultValue = "aaa")String ppid,
+			@CookieValue(value="pppw", defaultValue = "1111")int pppw) {
+		ModelAndView mav = new ModelAndView("cookie/loginReg");
+		mav.addObject("ppid",ppid);
+		mav.addObject("pppw",pppw);
+		return mav;
+	}
+	
+	
+}

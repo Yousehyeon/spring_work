@@ -1,0 +1,15 @@
+package aaa.controll;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping("request")
+public class MemberController {
+	
+	ModelAndView mem() {
+		ModelAndView mem = new ModelAndView();
+		mem.setViewName(null);
+	}
+}

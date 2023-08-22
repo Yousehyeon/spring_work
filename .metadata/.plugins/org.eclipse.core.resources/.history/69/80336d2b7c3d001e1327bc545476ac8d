@@ -1,0 +1,34 @@
+package aaa.model;
+
+import lombok.Data;
+
+@Data
+public class Person {
+	
+
+	public Person(String pname, String gender, boolean mil) {
+		super();
+		this.pname = pname;
+		this.gender = gender;
+		this.mil = mil;
+	}
+	String pname, gender;
+	boolean mil;
+	@Override
+	public String toString() {
+		return "Person [pname=" + pname + ", gender=" + gender + ", mil=" + mil + "]";
+	}
+	public String getPname() {
+		return pname;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public boolean isMil() {
+		return mil;
+	}
+	
+	
+	
+	
+}

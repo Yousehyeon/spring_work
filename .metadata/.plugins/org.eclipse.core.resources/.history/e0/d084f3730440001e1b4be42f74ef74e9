@@ -1,0 +1,28 @@
+@Data
+public class Student1 {
+	String name;
+	int clas;
+	int kscore;
+	int escore;
+	int mscore;
+	int total;
+	
+	public int getTotal() {
+		total = kscore + escore + mscore;
+		return total;
+	}
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+

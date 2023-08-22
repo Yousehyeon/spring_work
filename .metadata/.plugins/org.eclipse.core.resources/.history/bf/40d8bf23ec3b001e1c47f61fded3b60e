@@ -1,0 +1,32 @@
+package aop_p.adv;
+
+import java.util.Arrays;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class FishingAdvice {
+    
+    Object fishing(ProceedingJoinPoint joinPoint, String bait) {
+        Object fs = null;
+        
+        System.out.println("낚시를 시작합니다.");
+        
+        if (bait == null) {
+            System.out.println("미끼를 넣으세요.");
+            return null;
+        }
+
+        try {
+            fs = joinPoint.proceed();
+            
+            if (fs != null && fs instanceof Fish && ((Fish) fs).getSize() <= 20) {
+                System.out.println("풀어주자");
+                fs = null;
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+        
+        return fs;
+    }
+}

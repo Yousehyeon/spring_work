@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>request/studentReg</title>
+</head>
+<body>
+<h1>request/studentReg</h1>
+<table border="">
+    <tr>
+        <td>학생</td>
+        <td>국어점수</td>
+        <td>영어점수</td>
+        <td>수학점수</td>
+        <td>반</td>
+        <td>총점</td>
+    </tr>
+    
+    <tr th:each="student : ${studentData.std}">
+	    <td>[[${student.name}]]</td>
+	    <td>[[${student.kscore}]]</td>
+	    <td>[[${student.escore}]]</td>
+	    <td>[[${student.mscore}]]</td>
+	    <td>[[${student.clas}]]</td>
+	    <td>[[${student.total}]]</td>
+    </tr>
+    
+      
+</body>
+</html>

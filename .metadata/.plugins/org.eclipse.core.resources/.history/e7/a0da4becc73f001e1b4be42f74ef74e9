@@ -1,0 +1,39 @@
+package aaa.controll;
+
+import org.springframework.boot.context.properties.bind.DefaultValue;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequestMapping("/request")
+public class CoffeeController {
+	
+	@RequestMapping("coffee")
+		String coffee(
+				@RequestParam(value="id", defaultValue = "아메리카노")String cid,
+				@RequestParam(value="id1", defaultValue = "아프리카노")String cid1,
+				@RequestParam(value="id2", defaultValue = "아시아노")String cid2,
+				@RequestParam(value="price", defaultValue = "2200")int price,
+				@RequestParam(value="price1", defaultValue = "2300")int price1,
+				@RequestParam(value="price2", defaultValue = "2500")int price2,
+				@RequestParam(value="cup", defaultValue = "1")int cup,
+				@RequestParam(value="cup1", required = false, defaultValue = "1"  )int cup1,
+				@RequestParam(value="cup2", defaultValue = "1")int cup2){
+			
+		System.out.println("커피:"+cid + ", 가격 : "+price+", 잔 수 :"+cup);
+		System.out.println("커피:"+cid1 + ", 가격 : "+price1+", 잔 수 :"+cup1);
+		System.out.println("커피:"+cid2 + ", 가격 : "+price2+", 잔 수 :"+cup2);
+		
+		
+		
+		return "req/coffee";
+		}
+				
+				
+				
+		
+		
+		
+		
+}

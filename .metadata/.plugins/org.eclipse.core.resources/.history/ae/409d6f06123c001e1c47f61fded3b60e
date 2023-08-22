@@ -1,0 +1,21 @@
+package aop_p.adv;
+
+import org.aspectj.lang.JoinPoint;
+import org.springframework.stereotype.Component;
+
+@Component
+public class FigureAdvice {
+
+	void circle(JoinPoint joinPoint) {
+		System.out.println("circle:"+joinPoint.getSignature().toShortString());
+	}
+	
+	void rectangle(JoinPoint joinPoint) {
+		System.out.println("rectangle:"+joinPoint.getSignature().toShortString());
+	}
+	
+	void triangle(JoinPoint joinPoint) {
+		System.out.println("triangle:"+joinPoint.getSignature().toShortString());
+	}
+	
+}

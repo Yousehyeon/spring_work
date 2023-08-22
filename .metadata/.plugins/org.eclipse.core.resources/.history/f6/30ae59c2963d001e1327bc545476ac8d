@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입이다.</title>
+</head>
+<body>
+<h2>memberForm</h2>
+<form action="memberReg" method="post">
+	<table border="">
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="id" /></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="password" name="passwd" /></td>
+		</tr>
+		<tr>
+			<td>비밀번호 확인</td>
+			<td><input type="password" name="passwd1" /></td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="pname" /></td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td><input type="text" name="email" /></td>
+		</tr>
+
+		
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="입력" />
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

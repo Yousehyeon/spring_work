@@ -1,0 +1,20 @@
+package aop_p.webToon;
+
+public class Fishing {
+	
+	public String baitx() {
+		return "미끼를 넣으세요";
+	}
+	
+	public String bait() {
+		return "낚시시작";
+	}
+	
+	public String sbait() {
+		
+	}
+	
+	
+	
+	
+}

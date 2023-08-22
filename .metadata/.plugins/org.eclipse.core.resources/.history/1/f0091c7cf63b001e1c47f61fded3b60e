@@ -1,0 +1,22 @@
+package aop_p.webToon;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Fishing {
+    
+    public Fish fishing() {
+        Fish fish = new Fish("물고기", 15);
+        return fish;
+    }
+    
+    public Fish baitx() {
+        System.out.println("미끼를 넣으세요.");
+        return fs;
+    }
+
+    public Fish sbait() {
+        Fish fish = new Fish("물고기", 25);
+        return fish;
+    }
+}

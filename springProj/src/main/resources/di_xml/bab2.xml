@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="di_p.breakfast" name="fb">
+		<constructor-arg value="토스트"/>
+		<constructor-arg value="3200"/>
+	</bean>	
+
+	<bean class="di_p.lunch" name="fl">
+		<constructor-arg value="제육볶음"/>
+		<constructor-arg value="7500"/>
+	</bean>	
+
+	<bean class="di_p.dinner" name="fd">
+		<constructor-arg value="김치찌개"/>
+		<constructor-arg value="8000"/>
+	</bean>	
+	<bean class="di_p.breakfast" name="fb1">
+		<constructor-arg value="주먹밥"/>
+		<constructor-arg value="1800"/>
+	</bean>	
+
+	<bean class="di_p.lunch" name="fl1">
+		<constructor-arg value="돼지불백"/>
+		<constructor-arg value="7000"/>
+	</bean>	
+
+	<bean class="di_p.dinner" name="fd1">
+		<constructor-arg value="삼겹살"/>
+		<constructor-arg value="9000"/>
+	</bean>	
+
+</beans>

@@ -1,0 +1,14 @@
+package aop_p.adv;
+
+import org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint;
+
+public class AroundAdvice {
+	
+	Object arTest(MethodInvocationProceedingJoinPoint joinPoint) {
+		Object res = null;
+				
+		return res;
+				
+				
+	}
+}

@@ -1,0 +1,17 @@
+package aop_p.webToon;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Figure {
+	
+	public String circle() {
+		System.out.println();
+	}
+	public void rectangle() {
+		System.out.println();
+	}
+	public void triangle() {
+		System.out.println();
+	}
+}

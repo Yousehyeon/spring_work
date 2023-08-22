@@ -1,0 +1,20 @@
+package aaa.model;
+
+public class Person {
+	
+
+	public Person(String pname, String gender, boolean mil) {
+		super();
+		this.pname = pname;
+		this.gender = gender;
+		this.mil = mil;
+	}
+	String pname, gender;
+	boolean mil;
+	@Override
+	public String toString() {
+		return "Person [pname=" + pname + ", gender=" + gender + ", mil=" + mil + "]";
+	}
+	
+	
+}

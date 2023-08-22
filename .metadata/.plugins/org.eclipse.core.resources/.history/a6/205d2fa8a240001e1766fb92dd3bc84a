@@ -1,0 +1,72 @@
+package aaa.controll;
+
+import java.util.HashMap;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Controller
+@RequestMapping("cookie")
+public class TestController {
+	
+	@RequestMapping("test1")
+	@ResponseBody
+	String make1(HttpServletResponse response) {
+		
+		response.addCookie(new Cookie("pid","aaa"));
+		response.addCookie(new Cookie("pw","1111"));
+		return "쿠키생성1";
+	}
+	
+	@RequestMapping("testview")
+	ModelAndView testview(
+			@CookieValue(value="pid", defaultValue = "aaa" )String pid,
+			@CookieValue(value="pw", defaultValue = "1234" )int pw){
+		ModelAndView mav = new ModelAndView("cookie/testview");
+		
+		String[] log = {
+				("aaa, 장동건, 1111"),
+				("bbb, 장서건, 2222"),
+				("ccc, 장동건, 3333"),
+				("ddd, 장남건, 1111"),
+				("eee, 북두신건, 3333")
+		};
+				
+
+		String pid = request.getParameter("pid");
+		String pw = request.getParameter("pw");
+		String msg = "로그인 실패";
+
+		for (String aa : log) {
+		    String[] bb= aa.split(", ");
+		    String dbid = bb[0];
+		    String dbPname = bb[1];
+		    String dbpw = bb[2];
+
+		    if (pid.equals(dbid) && pw.equals(dbpw)) {
+		        msg = dbPname + " 로그인 성공";
+		        response.addCookie(new Cookie("pid", pid));
+		        response.addCookie(new Cookie("pname", dbPname));
+		    }
+		}
+	}
+	
+	@RequestMapping("testviewReg")
+	ModelAndView testviewReg( 
+			@CookieValue(value="pid", defaultValue = "aaa" )String pid,
+			@CookieValue(value="pw", defaultValue = "1234" )int pw){
+		ModelAndView mav = new ModelAndView("cookie/testview");
+		mav.addObject("pid",pid);
+		mav.addObject("pw",pw);
+
+		return "mav";
+	}
+	
+}

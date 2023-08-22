@@ -1,0 +1,24 @@
+package aaa.model;
+
+import java.util.ArrayList;
+import java.util.TreeSet;
+
+import lombok.Data;
+
+@Data
+public class Exam {
+
+	ArrayList<Student1>arr;
+	TreeSet<Student1> ts;
+	public void rankCalc() {
+		for (Student1 st : arr) {
+			st.rankCalc(arr);
+		}
+	}
+	
+	public TreeSet<Student1> getTs(){
+		ts = new TreeSet<>(arr);
+		
+		return ts;
+	}
+}

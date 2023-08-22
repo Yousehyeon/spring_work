@@ -1,0 +1,25 @@
+package aop_p.adv;
+
+import java.util.Arrays;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class FishingAdvice {
+	
+	Object fiTest(ProceedingJoinPoint joinPoint) {
+		Object fs = null;
+
+		System.out.println(Arrays.toString(joinPoint.getArgs()));
+
+		try {
+
+			fs = joinPoint.proceed();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return fs;
+	}
+}

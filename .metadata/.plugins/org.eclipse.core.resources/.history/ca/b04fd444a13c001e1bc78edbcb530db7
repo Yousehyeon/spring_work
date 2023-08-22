@@ -1,0 +1,29 @@
+package aop_p.main;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import aop_p.webToon.JoSuk;
+import aop_p.webToon.KangBada;
+import aop_p.webToon.KangSan;
+import aop_p.webToon.Student;
+
+public class StudentMain {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext context = 
+				new ClassPathXmlApplicationContext("aop_xml/student.xml");
+		
+		Student std = context.getBean("student",Student.class);
+		
+		System.out.println(std.subject2(40, 50, 60);
+		System.out.println("---------------");
+		System.out.println(std.subject3());
+		System.out.println("---------------");
+		System.out.println(std.subject4(40));
+		System.out.println("---------------");
+		
+		
+	}
+
+}

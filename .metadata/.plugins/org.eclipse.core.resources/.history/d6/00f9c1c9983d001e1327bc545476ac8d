@@ -1,0 +1,49 @@
+package aaa.controll;
+
+import java.util.Arrays;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import aaa.model.Person;
+
+@Controller
+@RequestMapping("request")
+public class MemberController {
+	
+	@RequestMapping("mem1")
+	ModelAndView mem1() {
+		ModelAndView mem = new ModelAndView();
+		mem.setViewName("req/member");
+		mem.addObject("id", "dbtpgus");
+		mem.addObject("password", "asd123");
+		mem.addObject("password1", "asd123");
+		mem.addObject("pname", "유세현");
+		mem.addObject("email", "dbtpgus111");
+		return mem;
+	}
+	
+	@RequestMapping("memberForm")
+	String memberForm() {
+		return "req/attrForm";
+	}
+	
+	@RequestMapping("memberReg")
+	String memberReg( 
+			@ModelAttribute("id") int id,
+			@ModelAttribute("pname") String pname,
+			int [] jum,
+			String gender,
+			boolean mil,
+			Person per) {
+		System.out.println("id:"+id);
+		System.out.println("password:"+passowrd);
+		System.out.println("gender:"+gender);
+		System.out.println("mil:"+mil);
+		System.out.println("per:"+per);
+		return "req/attrReg";
+	
+	
+}

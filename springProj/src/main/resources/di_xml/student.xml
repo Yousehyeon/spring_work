@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean class="di_p.Student" name="std">
+	<property name="name" value="유세현" />
+	<property name="subject" value="[국어, 영어, 수학]" />
+	<property name="score" >
+		<array>
+			<value>60</value>
+			<value>70</value>
+			<value>80</value>
+		</array>
+	</property>
+	<property name="rank" value="0"/>
+	<property name="avg" value="0"/>
+</bean>
+
+
+	
+</beans>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>memberReg</title>
+</head>
+<body>
+<h1>request/memberReg</h1>
+id:[[${id}]]<br/>
+password:[[${passwd}]]<br/>
+password1:[[${passwd1}]]<br/>
+pname:[[${pname}]]<br/>
+id:[[${id}]]<br/>
+
+
+</body>
+</html>

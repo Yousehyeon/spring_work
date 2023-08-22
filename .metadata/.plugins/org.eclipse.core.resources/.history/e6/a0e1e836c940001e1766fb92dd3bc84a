@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+</head>
+<body>
+<h1>로그인 컷!</h1>
+
+<th:block th:if="${lid == ppid}">
+    너의 아이디는 [[${lid}]]
+</th:block>
+<th:block th:unless="${lid == ppid}">
+    너의 아이디는 [[${ppid}]]
+</th:block>
+
+<th:block th:if="${lpw == pppw}">
+    너의 비밀번호는 [[${pppw}]] 
+</th:block>
+<th:block th:unless="${lpw == pppw}">
+    너의 비밀번호는 [[${pppw}]] 
+</th:block>
+
+
+</body>
+</html>

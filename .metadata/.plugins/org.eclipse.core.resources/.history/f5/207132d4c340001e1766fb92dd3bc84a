@@ -1,0 +1,53 @@
+package aaa.controll;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
+
+@Controller
+@RequestMapping("login")
+public class LoginController {
+
+	@RequestMapping("make3")
+	String make3(HttpServletResponse response) {
+		
+		response.addCookie(new Cookie("lid","aaa"));
+		response.addCookie(new Cookie("lpw","1111"));
+		return "쿠키생성3";
+	}
+	@RequestMapping("make4")
+	String make4(HttpServletResponse response) {
+		
+		response.addCookie(new Cookie("ppid","aaa"));
+		response.addCookie(new Cookie("pppw","1111"));
+		return "쿠키생성4";
+	}
+	
+	@RequestMapping("login")
+    ModelAndView login(
+            @CookieValue(value = "lid") String lid,
+            @CookieValue(value = "lpw") String lpw) {
+        ModelAndView mav = new ModelAndView("cookie/login");
+        mav.addObject("lid", lid);
+        mav.addObject("lpw", lpw);
+        return mav;
+    }
+	
+	@RequestMapping("loginReg")
+	ModelAndView loginReg(
+			@CookieValue(value="ppid")String ppid,
+			@CookieValue(value="pppw")int pppw) {
+		ModelAndView mav = new ModelAndView("cookie/loginReg");
+		mav.addObject("ppid",ppid);
+		mav.addObject("pppw",pppw);
+		return mav;
+	}
+	
+	
+}
