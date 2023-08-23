@@ -15,9 +15,11 @@ public class Person {
 		this.gender = gender;
 		this.mil = mil;
 	}
-	String pname, gender, id, pw;
+	
+	String pname, gender, id, pw, msg;
 	int age;
 	boolean mil, marriage;
+	
 	public Person(String id, String pname, String pw) {
 		super();
 		this.id = id;
@@ -25,7 +27,11 @@ public class Person {
 		this.pw = pw;
 	}
 	
+	public boolean idPwChk(Person other) {
 	
+		
+		return id.equals(other.id) && pw.equals(other.pw);
+	}
 	
 	
 }

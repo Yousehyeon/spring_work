@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>session/view</title>
+</head>
+<body>
+<h1>내가 로그인 정보다</h1>
+pname:[[${session.pname}]]<br/>
+pid:[[${session.pid}]]<br/>
+pw:[[${session.pw}]]<br/>
+<a:href="@{/logout}">로그아웃</a>
+</body>
+</html>

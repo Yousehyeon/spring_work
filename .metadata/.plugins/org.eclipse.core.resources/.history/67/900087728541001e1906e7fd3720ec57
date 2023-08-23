@@ -1,0 +1,12 @@
+package aaa;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MyConfig {
+
+	@Bean
+	Battery bat1() {
+		return new Battery()
+	}
+}
