@@ -1,0 +1,7 @@
+<th:block layout:fragment="mmm"/>
+<tr>
+		<td width="100px">
+			<img th:each="mc:${mainCt}" th:src="|/sn/${mc}|" alt="" />
+			
+		</td>
+	</tr>

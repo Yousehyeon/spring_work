@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="msg"/>
+		<item key="selection" value="email"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="msg"/>
-			<item value="ㅡㄶ"/>
-			<item value="Alert"/>
-			<item value="alert"/>
-			<item value="80"/>
-			<item value="pname"/>
-			<item value="arr"/>
-			<item value="ㅁㄱㄱ"/>
+			<item value="email"/>
+			<item value="me"/>
+			<item value="mem"/>
+			<item value="md"/>
+			<item value="my"/>
 			<item value="aaa"/>
-			<item value="requ"/>
-			<item value="req"/>
-			<item value="jpeg"/>
-			<item value="jpe"/>
-			<item value="jepg"/>
-			<item value="ㄷ"/>
+			<item value="view"/>
+			<item value="bat"/>
+			<item value="bbb"/>
+			<item value="ser"/>
+			<item value="res"/>
+			<item value="conte"/>
+			<item value="con"/>
+			<item value="tem"/>
+			<item value="test"/>
 		</list>
 		<list key="replacehistory">
 		</list>

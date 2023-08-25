@@ -1,0 +1,14 @@
+package aaa.controll;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/provider")
+public class ProviderController {
+
+	@RequestMapping("list")
+	String mapping1() {
+		return "provider/view";
+	}
+}

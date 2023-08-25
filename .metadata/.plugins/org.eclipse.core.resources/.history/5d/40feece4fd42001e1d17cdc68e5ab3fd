@@ -1,0 +1,45 @@
+package aaa.model;
+
+import lombok.Data;
+
+@Data
+
+public class Person {
+	
+	public Person() {
+		// TODO Auto-generated constructor stub
+	}
+	public Person(String pname, String gender, boolean mil) {
+		super();
+		this.pname = pname;
+		this.gender = gender;
+		this.mil = mil;
+	}
+	
+	String pname, gender, id, pw, msg;
+	int age, no;
+	boolean mil, marriage;
+	
+	
+	
+	public boolean idPwChk(Person other) {
+	
+		
+		return id.equals(other.id) && pw.equals(other.pw);
+	}
+	public Person(String pname, String gender, String id, String pw, String msg, int age, int no, boolean mil,
+			boolean marriage) {
+		super();
+		this.pname = pname;
+		this.gender = gender;
+		this.id = id;
+		this.pw = pw;
+		this.msg = msg;
+		this.age = age;
+		this.no = no;
+		this.mil = mil;
+		this.marriage = marriage;
+	}
+	
+	
+}

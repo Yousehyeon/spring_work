@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>form/link</title>
+</head>
+<body>
+<h1>form/link</h1>
+<a href="aaa">aaa</a>
+<a th:href="@{bbb}">bbb</a>
+<a href="/ccc">ccc</a>
+<a th:href="@{/ddd}">ddd</a>
+<a th:href="@{${cate1}}">[[${cate1}]]</a>
+<a th:href="${cate2}">[[${cate2}]]</a>
+<!--<a th:href="ggg(pid=zx,age=14)">ggg</a>-->
+@GetMapping("form")
+	String form(MemData md) {
+		return "form/form";
+	}
+	
+	@GetMapping("link")
+	String link(Model mm) {
+		mm.addAttribute("cate1", "eee");
+		mm.addAttribute("cate2", "fff");
+		mm.addAttribute("no", 2);
+		mm.addAttribute("age", 34);
+		mm.addAttribute("pid", "qwer");
+		return "form/link";
+	}
+	
+	@GetMapping("{cate}")
+	@ResponseBody
+	String link2(@PathVariable String cate) {
+		return "cate:"+cate+"<br/>";
+	}
+</body>
+</html>	

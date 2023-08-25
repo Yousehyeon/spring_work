@@ -1,0 +1,16 @@
+package aaa.model;
+
+import lombok.Data;
+
+@Data
+public class JoinData {
+
+	
+	String pid;
+	String pname;
+	String pw1;
+	String pw2;
+	String email;
+	String phone;
+	int age;
+}

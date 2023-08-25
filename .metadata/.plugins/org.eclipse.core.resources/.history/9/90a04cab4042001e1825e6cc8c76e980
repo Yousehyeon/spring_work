@@ -1,0 +1,16 @@
+package aaa.controll;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/path/{cate}")
+public class PathController {
+	
+	@RequestMapping("aaa")
+	String mmm1() {
+		System.out.println("mmm1() 실행");
+		
+		return "/";
+	}
+}

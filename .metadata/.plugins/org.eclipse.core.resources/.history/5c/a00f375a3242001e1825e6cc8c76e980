@@ -1,0 +1,9 @@
+[[${pid}]] 님 안녕하세요
+<h3>헤더 1</h3>
+<table width="100%">
+	<tr align="center">
+		<td th:each="md : ${hNav}">
+			<a th:href="|?sn=${md.url}|" th:text="${md.txt}"/>
+		</td>
+	</tr>
+</table>

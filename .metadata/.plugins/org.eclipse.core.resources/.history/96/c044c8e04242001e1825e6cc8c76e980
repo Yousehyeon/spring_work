@@ -1,0 +1,34 @@
+package aaa.controll;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/*
+localhost/board/notice/list
+localhost/board/fnq/list
+localhost/board/qna/list
+   
+*/
+
+@Controller
+@RequestMapping("/path/{cate}")
+public class PathController {
+	
+	@RequestMapping("aaa")
+	String mmm1(@PathVariable String cate) {
+		System.out.println("mmm1() 실행" + cate);
+		
+		return "path/view";
+	}
+	
+	@RequestMapping("{ser}")
+	String mmm2(@PathVariable String cate,@PathVariable String ser) {
+		System.out.println("mmm2() 실행" + cate+","+ser);
+		
+		return "path/view";
+	}
+	
+	
+	
+}

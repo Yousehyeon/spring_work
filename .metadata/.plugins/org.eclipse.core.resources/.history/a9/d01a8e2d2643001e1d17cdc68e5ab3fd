@@ -1,0 +1,19 @@
+package aaa.service;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerInterceptor;
+
+import jakarta.annotation.Resource;
+
+@Configuration
+public class EventInterceptor implements HandlerInterceptor {
+	
+	@Resource
+	EventInterceptor interceptor;
+	
+	private void addIntercepter() {
+		// TODO Auto-generated method stub
+
+	}
+	
+}

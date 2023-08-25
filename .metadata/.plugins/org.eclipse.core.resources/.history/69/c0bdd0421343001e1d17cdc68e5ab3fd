@@ -1,0 +1,22 @@
+package aaa.model;
+
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Data
+public class JoinData {
+
+	@NotEmpty(message = "아이디 없다 마 개쉐이야")
+	@Size(min=3, max=10, message="id 길이 맞춰라 개쉐이야")
+	String pid;
+	
+	@Pattern(regex="")
+	String pname;
+	String pw1;
+	String pw2;
+	String email;
+	String phone;
+	int age;
+}

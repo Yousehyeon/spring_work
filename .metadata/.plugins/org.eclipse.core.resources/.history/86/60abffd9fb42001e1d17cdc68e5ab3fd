@@ -1,0 +1,22 @@
+package aaa.controll;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import aaa.model.BoardData;
+import aaa.model.MemData;
+
+@Controller
+@RequestMapping("/form")
+public class FormController {
+
+	@RequestMapping("form")
+	String form(MemData md) {
+		return "form/form";
+	}
+	
+	@RequestMapping("board")
+	String form(BoardData bd) {
+		return "form/board";
+	}
+}

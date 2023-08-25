@@ -1,0 +1,59 @@
+package aaa.controll;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import aaa.model.MenuData;
+import aaa.model.SeasonMain;
+import aaa.service.MySession;
+import jakarta.annotation.Resource;
+
+@Controller
+@RequestMapping("/path/")
+public class PathSeasonController {
+	
+	@Resource
+	SeasonMain sm;
+	MySession ms;
+	
+	@ModelAttribute("hNav")
+	Object headerNav() {
+		ArrayList<MenuData>res = new ArrayList<>();
+		res.add(new MenuData("spring", "봄"));
+		res.add(new MenuData("summer", "여름"));
+		res.add(new MenuData("autumn", "가을"));
+		res.add(new MenuData("winter", "겨울"));
+		return res;
+	}
+	
+	@ModelAttribute("aaa")
+	Object mmm() {
+		Object rr = ms.getContext().getBean("seasonMain");
+		return rr;
+	}
+	
+	@RequestMapping("list")
+	String mapping1() {
+		return "path/template";
+	}
+	
+	
+	@ModelAttribute("fTxt")
+	Object footerTxt() {
+		
+		return "바닥글입니다.";
+	}
+	
+
+	@RequestMapping("{ccc}")
+	String template(@PathVariable String ccc, Model mm) {
+		mm.addAttribute("spr",ms.getContext().getBean(ccc));
+		return "path/template";
+	}
+}

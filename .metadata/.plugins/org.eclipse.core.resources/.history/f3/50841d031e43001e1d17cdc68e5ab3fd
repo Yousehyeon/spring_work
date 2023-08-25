@@ -1,0 +1,59 @@
+package aaa.controll;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import aaa.model.JoinData;
+import aaa.model.JoinData2;
+import aaa.service.JoinChk;
+import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
+
+@Controller
+@RequestMapping("/form")
+public class ValidController {
+
+	@Resource
+	JoinChk joinchk;
+	
+	
+	@GetMapping("validation")
+	String validForm(JoinData jd) {
+		return "form/validForm";
+	}
+	
+	@GetMapping("validation2")
+	String validForm2(JoinData2 jd) {
+		return "form/validForm2";
+	}
+	
+	
+	@PostMapping("validation")
+	String validReg(@Valid JoinData jd, BindingResult br) {
+		
+		System.out.println("validReg : "+br.hasErrors());
+		
+		if(br.hasErrors()) {//에러가 있다면
+			return "form/validForm";
+		}
+		
+		//에러가 없으면
+		return "form/validReg";
+	}
+	
+	@PostMapping("validation2")
+	String validReg(@Valid JoinData2 jd, BindingResult br) {
+		
+		System.out.println("validReg : "+br.hasErrors());
+		
+		if(br.hasErrors()) {//에러가 있다면
+			return "form/validForm2";
+		}
+		
+		//에러가 없으면
+		return "form/validReg2";
+	}
+}

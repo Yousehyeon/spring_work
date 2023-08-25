@@ -1,0 +1,3 @@
+<h3>나는 body 이지롱 [[${ages}]]</h3>
+<th:block layout:fragment="mmm"/>
+

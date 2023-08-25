@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<style>
+	.date{width: 50px;}
+	.date1{width: 30px;}
+	.emaill{width: 120px;}
+	.phone{width:40px;}
+	.phonee{width: 50px;}
+	.dup{margin-left:25px;}
+	
+</style>
+<script src="./js/jquery-3.6.4.js"></script> <!-- 먼저 jQuery 로드 -->
+<script src="./js/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+    $("#datepicker").datepicker({
+        dateFormat: "yy-mm-dd", // 선택한 날짜 형식
+        changeMonth: true,      // 월 선택 가능
+        changeYear: true,       // 연도 선택 가능
+        yearRange: "1900:2023", // 선택 가능한 연도 범위
+    });
+});
+
+function autoTab(input, maxLength, nextInput) {
+    if (input.value.length >= maxLength) {	
+        nextInput.focus();
+    }
+}
+
+</script>
+</head>
+<body>
+<h1>form/board</h1>
+<form action="" method="post" th:object="${boardData}">
+	<table border="">
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" th:field="*{pid}" /><input class="dup" type="submit" value="중복"></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="password" /></td>
+		</tr>
+		<tr>
+			<td>비밀번호 확인</td>
+			<td><input type="password" /></td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td><input type="text" name="pname" /></td>
+		</tr>
+		<tr>
+			<td>성별</td>
+			<td>
+				<label th:each="gg : *{genders}" >
+					<input type="radio" name="gender" th:value="${gg}" 
+					th:checked="*{gender} == ${gg}"/>
+					[[${gg}]]
+				</label>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>생년월일</td>
+			<td>
+				<input type="text" name="date" id="datepicker" class="date" maxlength="10" />
+				
+			</td>
+		</tr>
+		
+		<tr>
+			<td>이메일</td>
+			<td><input type="text" name="email1" class="emaill"/>@
+				<select th:field="*{email2}" >
+					<option th:each="ee:*{emails}" th:value="${ee.value}" th:text="${ee.key}"/>
+				</select>
+			</td>
+		</tr>
+		 <tr>
+            <td>연락처</td>
+            <td>
+                <input type="text" class="phone" maxlength="3" oninput="autoTab(this, 3, document.getElementById('phone2'))" /> -
+                <input type="text" id="phone2" class="phonee" maxlength="4" oninput="autoTab(this, 4, document.getElementById('phone3'))" /> -
+                <input type="text" id="phone3" class="phonee"  maxlength="4" />
+            </td>
+        </tr>
+		<tr>
+			<td>주소</td>
+			<td><input type="text" th:field="*{addres}" /></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" >
+				<input type="submit" value="가입" />
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

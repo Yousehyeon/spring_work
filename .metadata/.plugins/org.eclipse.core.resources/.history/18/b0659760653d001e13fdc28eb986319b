@@ -1,7 +1,0 @@
-package aaa;
-
-public class BBB {
-	String pname;	
-	int age;
-	boolean marriage;
-}

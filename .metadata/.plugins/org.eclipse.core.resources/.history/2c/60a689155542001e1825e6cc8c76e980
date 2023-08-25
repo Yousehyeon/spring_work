@@ -1,0 +1,8 @@
+package aaa.service;
+
+import org.springframework.context.ApplicationContext;
+
+public interface MyProvider extends ApplicationContext {
+	
+	ApplicationContext context;
+}

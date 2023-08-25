@@ -1,7 +1,0 @@
-server : 
-  port : 80
-spring : 
-  thymeleaf:
-    prefix : viex/
-    suffix : .html
-    cache : false 

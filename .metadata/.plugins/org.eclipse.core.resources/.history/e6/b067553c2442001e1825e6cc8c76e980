@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--lalala 입니다 : 로 출력
+total 입니다 는 출력되지 않음
+-->
+<title>total 입니다</title>
+</head>
+<body>
+	
+<h2>내가 total 이여</h2>
+<table>
+	<tr>
+		<td colspasn="2">헤얻</td>
+	</tr>
+	<tr>
+		<td aria-valuemax="" >어사이드</td>
+		<td>섹션</td>
+	</tr>
+	<tr>
+		<td>
+			<td colspan="2">푸터</td>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

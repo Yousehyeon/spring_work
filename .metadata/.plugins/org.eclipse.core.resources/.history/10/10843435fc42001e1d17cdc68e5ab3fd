@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>form/link</title>
+</head>
+<body>
+<h1>form/link</h1>
+<a href="aaa">aaa</a>
+</body>
+</html>

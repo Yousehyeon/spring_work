@@ -1,0 +1,43 @@
+package aaa.model;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import lombok.Data;
+
+@Data
+public class BoardData {
+
+	String pid, pw,pw1,addres,phone, pname, gender="남", email2="google.com", date;
+	
+	String [] genders = {"남","여"};
+	
+	public List<MenuData> getHobbys(){
+		List<MenuData> res = new ArrayList<>();
+		
+		res.add(new MenuData("coding","코딩하기"));
+		res.add(new MenuData("study","공부하기"));
+		res.add(new MenuData("debug","디버깅"));
+		res.add(new MenuData("programming","프로그램만들기"));
+		
+		return res;
+	}
+	
+	
+	public Map<String, String> getEmails(){
+		Map<String, String> res = new LinkedHashMap<>();
+		
+		
+		res.put("naver.com", "naver.com");
+		res.put("google.com", "google.com");
+		res.put("daum.net", "daum.net");
+		res.put("직접 입력", "직접");
+		
+		return res;
+	}
+	
+	
+	
+}
