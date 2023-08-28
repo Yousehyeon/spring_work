@@ -1,0 +1,25 @@
+package aaa.service;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import aaa.model.BoardDTO;
+import aaa.model.BoardTestDTO;
+
+@Mapper
+public interface BoardTestMapper {
+	
+	List<BoardTestDTO> list();
+	
+	BoardTestDTO detail(int id);
+	
+	int insseerr(BoardTestDTO ddto);
+	
+	int delettt(BoardTestDTO ddto);
+	
+	int modifffy(BoardTestDTO ddto);
+	
+	
+	
+}

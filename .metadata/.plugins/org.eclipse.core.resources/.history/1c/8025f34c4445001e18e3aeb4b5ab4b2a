@@ -1,0 +1,8 @@
+package aaa.model;
+
+public class BoardDTO {
+	
+	int id;
+	String title, pname, pw, upfile, content;
+	Date regDate;
+}

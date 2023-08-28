@@ -1,0 +1,42 @@
+package aaa.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import aaa.model.BoardDTO;
+import aaa.service.BoardService;
+
+
+@Controller
+@RequestMapping("/board")
+public class BoardController {
+	
+	BoardService boardService;
+	
+	@Autowired
+	public BoardController(BoardService boardService) {
+		this.boardService = boardService;
+	}
+	
+	
+	@GetMapping("blist")
+	String form3(Model mm) {
+		List<BoardDTO> boardList = boardService.getBoardList();
+		mm.addAttribute("boardList", boardList);
+		return "board/blist";
+	}
+	
+	@GetMapping("/bdetail")
+	public String sBoardDetail(@RequestParam("title") String title, Model model) {
+	    BoardDTO board = boardService.getBoardByTitle(title);
+	    model.addAttribute("board", board);
+	    return "board/bdetail";
+	}
+	
+}

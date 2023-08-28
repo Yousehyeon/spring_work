@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>board/insertForm</title>
+</head>
+<body>
+<h1>board/insertForm</h1>
+<form action="post" >
+	<table>
+		<tr>
+			<td><input type="text" /></td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

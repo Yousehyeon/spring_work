@@ -1,0 +1,10 @@
+package aaa.model;
+
+import java.sql.Date;
+
+public class BoardDTO {
+	
+	int id, cnt, seq, lev, gid;
+	String title, pname, pw, upfile, content;
+	Date regDate;
+}

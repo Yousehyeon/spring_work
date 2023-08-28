@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>board/list</title>
+</head>
+<body>
+<h1>board/list</h1>
+
+
+	<table border="">
+		<tr>
+			<td>id</td><td th:text="${dto.id}" />
+			<td>title</td><td th:text="${dto.title}" />
+			<td>pname</td><td th:text="${dto.pname}" />
+			<td>regDate</td><td th:text="${dto.regDate}" />
+			<td>cnt</td><td th:text="${dto.cnt}" />
+		</tr>
+		<tr>
+			<td colspan="5" align="right">
+				<a href="insert">글쓰기</a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
