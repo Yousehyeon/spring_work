@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>board/list</title>
+<style>
+	#ii{text-align: right;}
+    th, td {text-align: center;}
+    
+    ul { margin: 0; list-style: none; display: flex;  justify-content: center; gap: 10px;}
+    
+
+</style>
+</head>
+<body>
+<h1>board/list</h1>
+
+	<table border="">
+		<tr>
+			<td>번호</td>
+			<td>제목</td>
+			<td>작성자</td>
+			<td>등록일</td>
+			<td>조회수</td>
+		</tr>
+		     <tr th:each="dto, dd : ${mainData}">
+        <td th:text="${dd.count + (page * size)}" />
+        <td>
+            <a th:href="|detail/${dto.id}|" th:text="${dto.title}"></a>
+        </td>
+        <td th:text="${dto.pname}"/>
+        <td th:text="${dto.regDate}"/>
+        <td th:text="${dto.cnt}"/>
+    </tr>
+			<td colspan="5" align="right" id="ii">
+				<a href="insert">글쓰기</a>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5">	
+				<div>
+			   		<div>
+				        <ul>
+				             <li th:if="${page > 0}">
+				                <a th:href=	"@{${'/board/list'}(page=${page-1}, size=${size})}">
+				                    <span>&laquo;</span>
+				                </a>
+				            </li>
+				            <li th:each="i : ${#numbers.sequence(0, totalPages-1)}" th:class="${i == page}">
+				                <a th:href="@{${'/board/list'}(page=${i}, size=${size})}" th:text="${i+1}"></a>
+				            </li>
+				            <li th:if="${page < totalPages-1}">
+				                <a th:href="@{${'/board/list'}(page=${page+1}, size=${size})}">
+				                    <span>&raquo;</span>
+				                </a>
+				            </li>
+				        </ul>
+				    </div>
+				</div>
+			</td>
+		</tr>
+</table>
+
+
+</body>
+</html>

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import aaa.model.BoardDTO;
 import aaa.model.PageData;
@@ -23,18 +24,25 @@ public class BoardController {
 	BoardMapper mapper;
 
 	@RequestMapping("list")
-	String list(Model mm) {
-		List<BoardDTO>data = mapper.list();
-		
-		//System.out.println(data);
-		mm.addAttribute("mainData", data);
-		return "board/list";
-	}
-	
+	String list(Model mm, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size){
+	    int ps = page * size;
+	    List<BoardDTO> data = mapper.listPaged(ps, size);
+	    
+	    int ttotal = mapper.count();
+	    int totalPages = (ttotal + size) / size;
+	    
+	    mm.addAttribute("mainData", data);
+	    mm.addAttribute("page", page);
+	    mm.addAttribute("size", size);
+	    mm.addAttribute("totalPages", totalPages);
+	    mm.addAttribute("ttotal", ttotal);
+	    
+	    return "board/list";
+	}	
 	
 	@RequestMapping("detail/{id}")
 	String detail(Model mm, @PathVariable int id) {
-
+		
 		mm.addAttribute("dto", mapper.detail(id));
 		return "board/detail";
 	}
@@ -42,7 +50,7 @@ public class BoardController {
 	
 	@GetMapping("insert")
 	String insert(BoardDTO dto) {
-
+		
 		return "board/insertForm";
 	}
 	

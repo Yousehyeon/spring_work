@@ -6,4 +6,5 @@ import lombok.Data;
 public class PageData {
 	
 	String msg, goUrl;
+	
 }

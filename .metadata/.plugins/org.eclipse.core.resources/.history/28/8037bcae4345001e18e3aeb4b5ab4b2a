@@ -1,5 +1,0 @@
-package aaa.service;
-
-public interface BoardMapper {
-
-}
